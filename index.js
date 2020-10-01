@@ -1,67 +1,3 @@
-<<<<<<< HEAD
-console.log(puzzle);
-function sudokuSolver(puzzle){
-    var nonposs ={},imposs = {}, emetysp = 81;
-    while (emetysp > 0){
-     emetysp = 0;
-    for (var vert = 0; vert < puzzle.length; vert++){
-        for (var horz =0; horz < puzzle.length; horz++){
-             //console.log(puzzle[vert][horz]);
-            if (puzzle[vert][horz] === 0){
-                nonposs = {}; 
-                for (var i=0; i < 9; i++){
-                    if (puzzle[vert][i] > 0){
-                    nonposs[puzzle[vert][i]] = true;
-                     }
-                   if (puzzle[i][horz] > 0){
-                    nonposs[puzzle[i][horz]] = true;
-                    }
-                }
-                for (var vertbox = Math.floor(vert / 3) * 3; 
-                 vertbox < Math.floor(vert / 3) * 3 + 3; vertbox++){
-                     for (var horzbox =Math.floor(horz / 3) * 3;
-                     horzbox < Math.floor(horz / 3) * 3 + 3; horzbox++){
-                        if (puzzle[vertbox][horzbox]){
-                            nonposs[puzzle[vertbox][horzbox]] = true;
-                     }              
-                   }
-                }
-                 //console.log(nonposs);
-                 
-                  imposs = Object.keys(nonposs);
-                if (imposs.length === 8){
-                    for (var i=1; i < 10; i++){
-                        if (imposs.indexOf(i.toString())< 0){
-                            //console.log(vert,horz);
-                            puzzle[vert][horz] = i;
-
-                        }
-                    }
-                }else{
-                    emetysp++;
-                } 
-            }
-            } 
-    }
-}
-    return puzzle;
-   
-}
-
-var puzzle =[
-    [0, 0, 0, 2, 6, 0, 7, 0, 1],
-    [6, 8, 0, 0, 7, 0, 0, 9, 0],
-    [1, 9, 0, 0, 0, 4, 5, 0, 0],
-    [8, 2, 0, 1, 0, 0, 0, 4, 0],
-    [0, 0, 4, 6, 0, 2, 9, 0, 0],
-    [0, 5, 0, 0, 0, 3, 0, 2, 8],
-    [0, 0, 9, 3, 0, 0, 0, 7, 4],
-    [0, 4, 0, 0, 5, 0, 0, 3, 6],
-    [7, 0, 3, 0, 1, 8, 0, 0, 0]
-];
-
-console.log(sudokuSolver(puzzle));
-=======
 const b = null 
 //b for blank
 
@@ -208,4 +144,3 @@ function boxesGood(board){
 }
 
 console.log(solve(input))
->>>>>>> 4461ee3e4d624cbbb4c7624a6d23084299696fa1
