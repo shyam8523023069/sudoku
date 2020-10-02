@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-console.log(puzzle);
+
 function sudokuSolver(puzzle){
     var nonposs ={},imposs = {}, emetysp = 81;
     while (emetysp > 0){
